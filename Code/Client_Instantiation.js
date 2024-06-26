@@ -16,9 +16,9 @@ private buildConnectionConfig(channel: string; username: string; accessToken: st
                 reconnect: true
             },
             identity: {
-                username: `${username}`,
-                password: `oauth:${accessToken}`
+                username: `${Pipbot}`,
+                password: `oauth:${mluisxuvu1uefsttak8v5iizel7i5i}`
             },
-            channels: [`${channel}`]
+            channels: [`${Wethan}`, `${Official__Piplin}`]
         };
     }
