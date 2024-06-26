@@ -1,0 +1,27 @@
+These are the instructions on how to run Pipbot
+
+Step 1:
+  Make sure you have ALL the files downloaded on to your computer
+
+Step 2:
+  Set the files into the software machine application you will be using to run the bot (I use Virtual Studio Code)
+
+Step 3:
+  Go to the 'Client_Instantiation.js' file, and plug in the desired channel you want the bot to moderate.
+  You will put the channel name under the channels line like so:
+    [`${Channel_Name}`]
+  If you want more than one channel being monitored (not recommended for smaller computers), you can put a comma
+  between each backtick (`):
+    [`${Channel_Name}`, `${Channel_Name}`]
+
+Step 4:
+  Once the machine is loaded up and the files are installed into the machine, go to the command prompt on the application
+  
+Step 5:
+  Type "cd [filepath]". This will open the file path for the application to find the files and open them on your computer.
+
+Step 6:
+  Write "start [filename]"
+  This will run the bot and allow you to see live chats in the command prompt.
+
+Enjoy!
