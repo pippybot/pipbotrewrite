@@ -16,7 +16,7 @@ public class OpenAIAPIClient {
 
             // Set up the HTTP request method, headers, and API key
             connection.setRequestMethod("POST");
-            connection.setRequestProperty("Authorization", "Bearer sk-proj-o8ukxZ3pwG54qrX67uqBT3BlbkFJhRlO8AxKOneU1QZ2xuGd"); // Replaced with my API key
+            connection.setRequestProperty("Authorization", "Bearer sk-proj-4ypvZGz0aQ1qbsryJtsqT3BlbkFJkIRbYEGHzvwK7et8Q7Lv"); // Replaced with my API key
             connection.setRequestProperty("Content-Type", "application/json");
 
             // Construct the request body (example JSON input for ChatGPT)
