@@ -8,7 +8,7 @@ public class OpenAIAPIClient {
     public static void main(String[] args) {
         try {
             // Set the API endpoint URL
-            String endpointURL = "https://api.openai.com/v1/engines/davinci/completions";  // Replace with the appropriate endpoint
+            String endpointURL = "https://api.openai.com/v1/completions";  // Replace with the appropriate endpoint
 
             // Create a URL object and open a connection
             URL url = new URL(endpointURL);
