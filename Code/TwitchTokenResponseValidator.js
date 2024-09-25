@@ -1,13 +1,15 @@
-import { TwitchTokenDetails } from './../models/twitchTokenDetails.models';
+import { validateConfig } from 'Code/config-validator.js'; // File path for the Validator for the configurations
+import { TwitchTokenDetails } from '../../Code/TwitchTokenDetails.js'; // File path for the Twitch tokens
 import { validate } from "class-validator";
-import { InvalidTwitchResponseError } from '../models/error.model';
+import { InvalidTwitchResponseError } from '../models/error.model'; // File path for the error messages/codes
+
 export class TwitchTokenResponseValidator {
 
     public static async parseResponse(responseBody: string): Promise<TwitchTokenDetails> {
-        var tokenResponse = JSON.parse(JSON.stringify(responseBody))
+        var tokenResponse = JSON.parse(JSON.stringify(responseBody));
 
         try {
-            console.info("Validating Twitch Response")
+            console.info("Validating Twitch Response");
 
             let tokenDetails = new TwitchTokenDetails(
                 tokenResponse.access_token,
@@ -20,15 +22,18 @@ export class TwitchTokenResponseValidator {
 
             if (completeConfigErrors.length > 0)
                 throw new InvalidTwitchResponseError(`The answer from twitch token endpoint is not valid, 
-                here are the issues: ${completeConfigErrors.join()}`)
+                here are the issues: ${completeConfigErrors.join()}`);
 
-            console.info("Twitch Response is valid.")
+            // Optional configuration validator if needed
+            await validateConfig(tokenResponse); // If relevant
+
+            console.info("Twitch Response is valid.");
             return tokenDetails;
 
         } catch (err: unknown) {
             if (err instanceof InvalidTwitchResponseError)
-                console.log(err.message)
-            throw err
+                console.log(err.message);
+            throw err;
         }
     }
 }
