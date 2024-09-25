@@ -16,6 +16,7 @@ export class TwitchTokenDetails {
 
     @IsNotEmpty()
     @IsArray()
+    @IsString({ each: true}) // Validation of each element in the array as string
     scope: string[];
 
     @IsNotEmpty()
